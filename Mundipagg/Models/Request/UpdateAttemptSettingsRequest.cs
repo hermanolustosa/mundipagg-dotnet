@@ -7,6 +7,8 @@ namespace Mundipagg.Models.Request
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class UpdateAttemptSettingsRequest
     {
+        public string AttemptId { get; set; }
+
         public string Type { get; set; }
 
         public double[] Intervals { get; set; }

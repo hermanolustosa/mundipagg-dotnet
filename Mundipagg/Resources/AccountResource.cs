@@ -218,20 +218,68 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-        public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateWebhookSettings(string accountId, UpdateWebhookSettingsRequest request)
+        public BaseResponse<GetWebhookResponse, MundipaggErrorsResponse> GetWebhookSettings(string accountId, string hookSetId)
         {
-            var method = new HttpMethod("patch");
-            var endpoint = $"/accounts/{accountId}/webhook-settings";
+            var method = HttpMethod.Get;
+            var endpoint = $"/accounts/{accountId}/webhook-settings/{hookSetId}";
 
-            return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
+            return this.SendRequest<GetWebhookResponse>(method, endpoint, authMode: "amk");
         }
 
-        public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateAttemptSettings(string accountId, UpdateAttemptSettingsRequest request)
+        public BaseResponse<GetWebhookResponse, MundipaggErrorsResponse> CreateWebhookSettings(string accountId, CreateWebhookSettingsRequest request)
         {
-            var method = new HttpMethod("patch");
+            var method = HttpMethod.Post;
+            var endpoint = $"/accounts/{accountId}/webhook-settings";
+
+            return this.SendRequest<GetWebhookResponse>(method, endpoint, request, authMode: "amk");
+        }
+
+        public BaseResponse<GetWebhookResponse, MundipaggErrorsResponse> UpdateWebhookSettings(string accountId, UpdateWebhookSettingsRequest request)
+        {
+            var method = HttpMethod.Put;
+            var endpoint = $"/accounts/{accountId}/webhook-settings/{request.Id}";
+
+            return this.SendRequest<GetWebhookResponse>(method, endpoint, request, authMode: "amk");
+        }
+
+        public BaseResponse<GetWebhookResponse, MundipaggErrorsResponse> DeleteWebhookSettings(string accountId, string hookSetId)
+        {
+            var method = HttpMethod.Delete;
+            var endpoint = $"/accounts/{accountId}/webhook-settings/{hookSetId}";
+
+            return this.SendRequest<GetWebhookResponse>(method, endpoint, authMode: "amk");
+        }
+
+        public BaseResponse<GetAttemptSettingsResponse, MundipaggErrorsResponse> GetAttemptSettings(string accountId, UpdateAttemptSettingsRequest request)
+        {
+            var method = HttpMethod.Put;
+            var endpoint = $"/accounts/{accountId}/attempt-settings/{request.AttemptId}";
+
+            return this.SendRequest<GetAttemptSettingsResponse>(method, endpoint, request, authMode: "amk");
+        }
+
+        public BaseResponse<GetAttemptSettingsResponse, MundipaggErrorsResponse> CreateAttemptSettings(string accountId, CreateAttemptSettingsRequest request)
+        {
+            var method = HttpMethod.Post;
             var endpoint = $"/accounts/{accountId}/attempt-settings";
 
-            return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
+            return this.SendRequest<GetAttemptSettingsResponse>(method, endpoint, request, authMode: "amk");
+        }
+
+        public BaseResponse<GetAttemptSettingsResponse, MundipaggErrorsResponse> UpdateAttemptSettings(string accountId, UpdateAttemptSettingsRequest request)
+        {
+            var method = HttpMethod.Put;
+            var endpoint = $"/accounts/{accountId}/attempt-settings/{request.AttemptId}";
+
+            return this.SendRequest<GetAttemptSettingsResponse>(method, endpoint, request, authMode: "amk");
+        }
+
+        public BaseResponse<GetAttemptSettingsResponse, MundipaggErrorsResponse> DeleteAttemptSettings(string accountId, string attemptId)
+        {
+            var method = HttpMethod.Delete;
+            var endpoint = $"/accounts/{accountId}/attempt-settings/{attemptId}";
+
+            return this.SendRequest<GetAttemptSettingsResponse>(method, endpoint, authMode: "amk");
         }
     }
 }

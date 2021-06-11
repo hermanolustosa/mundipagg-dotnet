@@ -140,23 +140,71 @@ namespace Mundipagg.Resources.Interface
         /// <param name="request"></param>
         /// <returns></returns>
         BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateVoucherSettings(string accountId, UpdateVoucherSettingsRequest request);
-        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="hookSetId"></param>
+        /// <returns></returns>
+        BaseResponse<GetWebhookResponse, MundipaggErrorsResponse> GetWebhookSettings(string accountId, string hookSetId);
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="accountId"></param>
         /// <param name="request"></param>
         /// <returns></returns>
-        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateWebhookSettings(string accountId, UpdateWebhookSettingsRequest request);
-        
+        BaseResponse<GetWebhookResponse, MundipaggErrorsResponse> CreateWebhookSettings(string accountId, CreateWebhookSettingsRequest request);
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="accountId"></param>
         /// <param name="request"></param>
         /// <returns></returns>
-        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateAttemptSettings(string accountId, UpdateAttemptSettingsRequest request);
-        
+        BaseResponse<GetWebhookResponse, MundipaggErrorsResponse> UpdateWebhookSettings(string accountId, UpdateWebhookSettingsRequest request);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="hookSetId"></param>
+        /// <returns></returns>
+        BaseResponse<GetWebhookResponse, MundipaggErrorsResponse> DeleteWebhookSettings(string accountId, string hookSetId);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAttemptSettingsResponse, MundipaggErrorsResponse> GetAttemptSettings(string accountId, UpdateAttemptSettingsRequest request);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAttemptSettingsResponse, MundipaggErrorsResponse> CreateAttemptSettings(string accountId, CreateAttemptSettingsRequest request);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAttemptSettingsResponse, MundipaggErrorsResponse> UpdateAttemptSettings(string accountId, UpdateAttemptSettingsRequest request);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="attemptId"></param>
+        /// <returns></returns>
+        BaseResponse<GetAttemptSettingsResponse, MundipaggErrorsResponse> DeleteAttemptSettings(string accountId, string attemptId);
+
         /// <summary>
         /// 
         /// </summary>

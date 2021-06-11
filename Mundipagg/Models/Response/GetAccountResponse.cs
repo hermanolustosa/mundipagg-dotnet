@@ -120,6 +120,14 @@ namespace Mundipagg.Models.Response
         public string[] OptionalFields { get; set; }
 
         public string[] RequiredFields { get; set; }
+
+        public string SuccessUrl { get; set; }
+
+        public string[] AcceptedPaymentMethods { get; set; }
+
+        public string DefaultPaymentMethod { get; set; }
+
+        public string[] AcceptedBrands { get; set; }
     }
 
     public class GetCreditCardSettingsResponse
@@ -250,6 +258,8 @@ namespace Mundipagg.Models.Response
         public int? MaxAttempts { get; set; }
 
         public string[] Events { get; set; }
+
+        public string AuthenticationType { get; set; }
     }
 
     public class GetAntifraudSettingsResponse
