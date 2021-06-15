@@ -250,12 +250,12 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetWebhookResponse>(method, endpoint, authMode: "amk");
         }
 
-        public BaseResponse<GetAttemptSettingsResponse, MundipaggErrorsResponse> GetAttemptSettings(string accountId, UpdateAttemptSettingsRequest request)
+        public BaseResponse<GetAttemptSettingsResponse, MundipaggErrorsResponse> GetAttemptSettings(string accountId, string attemptId)
         {
-            var method = HttpMethod.Put;
-            var endpoint = $"/accounts/{accountId}/attempt-settings/{request.AttemptId}";
+            var method = HttpMethod.Get;
+            var endpoint = $"/accounts/{accountId}/attempt-settings/{attemptId}";
 
-            return this.SendRequest<GetAttemptSettingsResponse>(method, endpoint, request, authMode: "amk");
+            return this.SendRequest<GetAttemptSettingsResponse>(method, endpoint, authMode: "amk");
         }
 
         public BaseResponse<GetAttemptSettingsResponse, MundipaggErrorsResponse> CreateAttemptSettings(string accountId, CreateAttemptSettingsRequest request)

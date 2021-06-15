@@ -179,7 +179,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="accountId"></param>
         /// <param name="request"></param>
         /// <returns></returns>
-        BaseResponse<GetAttemptSettingsResponse, MundipaggErrorsResponse> GetAttemptSettings(string accountId, UpdateAttemptSettingsRequest request);
+        BaseResponse<GetAttemptSettingsResponse, MundipaggErrorsResponse> GetAttemptSettings(string accountId, string attemptId);
 
         /// <summary>
         /// 
